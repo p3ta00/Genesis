@@ -123,6 +123,7 @@ root@DEV01-Ares:/var/www/html/login# ls
 config.php  config.php.bak  index.php  license.txt  style.css```
 Results
 ```
+```
 <?php
 // Use SQL02 in production
 $con = new mysqli("10.10.110.10", "root", "sbtR5t7cq7PWE3AJ", "users");
