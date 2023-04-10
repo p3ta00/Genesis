@@ -119,10 +119,19 @@ uid=0(root) gid=0(root) groups=0(root)
 Further Enumeration
 
 ```
-root@DEV01-Ares:/var/log/apache2# cat access.log.* |grep password
-```
+root@DEV01-Ares:/var/www/html/login# ls
+config.php  config.php.bak  index.php  license.txt  style.css```
 Results
 ```
-10.10.14.3 - - [03/Dec/2020:09:06:26 +0000] "GET /login/?username=admin&password=8NJxgU2CtVsJYZE5 HTTP/1.1" 200 625 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
-10.10.14.3 - - [03/Dec/2020:09:06:26 +0000] "GET /login/?username=admin&password=$@#G34123421 HTTP/1.1" 200 625 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
+<?php
+// Use SQL02 in production
+$con = new mysqli("10.10.110.10", "root", "sbtR5t7cq7PWE3AJ", "users");
+
+if ($con->connect_errno) {
+    printf("connection failed: %s\n", $con->connect_error());
+    exit();
+}
+
+?>
+
 ```
