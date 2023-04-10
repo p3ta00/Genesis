@@ -43,6 +43,7 @@ Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
 
 MySQL [(none)]> 
 ```
+```
 MySQL [(none)]> show databases;
 +--------------------+
 | Database           |
@@ -161,7 +162,7 @@ child threads done
 creating shared library
 # whoami
 root
-
+```
 ## Further Enumeration
 
 I saw that filezilla was running on a few profiles
