@@ -116,4 +116,13 @@ Password:
 root@DEV01-Ares:/var/log/apache2# id
 uid=0(root) gid=0(root) groups=0(root)
 ```
+Further Enumeration
 
+```
+root@DEV01-Ares:/var/log/apache2# cat access.log.* |grep password
+```
+Results
+```
+10.10.14.3 - - [03/Dec/2020:09:06:26 +0000] "GET /login/?username=admin&password=8NJxgU2CtVsJYZE5 HTTP/1.1" 200 625 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
+10.10.14.3 - - [03/Dec/2020:09:06:26 +0000] "GET /login/?username=admin&password=$@#G34123421 HTTP/1.1" 200 625 "-" "Mozilla/5.0 (X11; Linux x86_64; rv:82.0) Gecko/20100101 Firefox/82.0"
+```
