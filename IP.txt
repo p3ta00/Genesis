@@ -3,7 +3,7 @@
 10.10.110.10 - Completed
 10.10.110.12 - Completed
 10.10.110.20 - Completed
-10.10.110.25
+10.10.110.25 - Completed
 10.10.110.45 - Completed
 10.10.110.58 - Completed
 10.10.110.60 - Completed
