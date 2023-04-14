@@ -1,4 +1,5 @@
 ## IP list
+```
 10.10.110.3 - Completed
 10.10.110.5 - Completed
 10.10.110.10 - Completed
@@ -14,7 +15,7 @@
 10.10.110.205 - Completed
 10.10.110.213 - Completed
 10.10.110.254
-
+```
 ## Password Enumeration
 ```
 crackmapexec smb 10.10.110.0/24 -u mrb3n -p 'W3lc0me123!!!'
