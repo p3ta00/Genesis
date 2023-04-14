@@ -87,6 +87,7 @@ We need a crumb
 ```
 curl http://10.10.110.102:8080/crumbIssuer/api/json
 ```
+```
 {"_class":"hudson.security.csrf.DefaultCrumbIssuer","crumb":"fd780767e1572b2d556aa1d50af5975a","crumbRequestField":"Jenkins-Crumb"}%  
 ```
 ```
